@@ -1,0 +1,13 @@
+const express = require('express')
+const port = 5001
+const helmet = require('helmet')
+const router = require('./routes/controller.js')
+ 
+const app = express()
+app.use(helmet())
+ 
+app.use('/',router)
+ 
+app.listen(port,function(){
+	console.log('listening to port ' + port);
+})
